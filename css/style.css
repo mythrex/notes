@@ -1,0 +1,15 @@
+body{
+  background-color: #f1f1f1;
+}
+label{
+  color: Black;
+}
+.up,.down{
+  cursor: pointer;
+}
+.list-item:first-child>.up{
+  visibility: hidden;
+}
+.list-item:last-child>.down{
+  visibility: hidden;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Notes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <script type="text/javascript" src="js/script.js"></script>
+  </head>
+  <body>
+
+  <div class="row">
+    <h1>To Do List</h1>
+    <div class="col s12 m6">
+      <div class="card-panel light-yellow">
+        <!--form-->
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s8">
+                <input placeholder="Write Here" id="newtodo" type="text" class="validate">
+                <label for="newtodo">Todo</label>
+              </div>
+              <div class="col s2">
+                <a class="btn-floating light-green" id="addtodo"><i class="material-icons">add</i></a>
+              </div>
+              <div class="col s2">
+                <a class="btn-floating red" id="delete"><i class="material-icons">delete</i></a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--list-->
+        <ul id="todolist">
+          <li class="list-item">
+            <input type="checkbox" class="filled-in" id="test5" />
+            <label for="test5">Red</label>
+            <a class="material-icons up">keyboard_arrow_up</a>
+            <a class="material-icons down">keyboard_arrow_down</a>
+          </li>
+          <li class="list-item">
+            <input type="checkbox" class="filled-in" id="test6" />
+            <label for="test6">yellow</label>
+            <a class="material-icons up">keyboard_arrow_up</a>
+            <a class="material-icons down">keyboard_arrow_down</a>
+          </li>
+          <li class="list-item">
+            <input type="checkbox" class="filled-in" id="test7" />
+            <label for="test7">brown</label>
+            <a class="material-icons up">keyboard_arrow_up</a>
+            <a class="material-icons down">keyboard_arrow_down</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+  </body>
+</html>
