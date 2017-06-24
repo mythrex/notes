@@ -13,3 +13,13 @@ label{
 .list-item:last-child>.down{
   visibility: hidden;
 }
+label{
+  font-family: 'Pacifico';
+  font-size: 1.4em;
+  color: Black;
+}
+.input-field label{
+  font-family: 'Pacifico';
+  font-size: 1.4em;
+  color: Black;
+}
