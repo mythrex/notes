@@ -14,12 +14,15 @@ label{
   visibility: hidden;
 }
 label{
-  font-family: 'Pacifico';
   font-size: 1.4em;
   color: Black;
 }
-.input-field label{
-  font-family: 'Pacifico';
-  font-size: 1.4em;
+.input-field label{  
   color: Black;
+}
+[type="checkbox"] + label{
+  font-size: 1.4rem;
+}
+.input-field label.active:not(.label-icon){
+  font-size: 1.4rem;
 }

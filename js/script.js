@@ -3,11 +3,24 @@ window.onload = function(){
   var newtodo = document.getElementById('newtodo');
   var addtodo = document.getElementById('addtodo');
   var todolist = document.getElementById('todolist');
+  var deltodo = document.getElementById('deltodo');
 
   refreshTodo();
+  //for adding
   addtodo.onclick = () => {
     addAndSave(newtodo.value);
   }
+  //for deleting
+  deltodo.onclick = () => {
+      console.log("Delete clicked");
+      todoItems = todoItems.filter((element)=>{
+        return element.done == false;
+      });
+      localStorage.setItem('todoList',JSON.stringify(todoItems));
+      refreshTodo();
+    }
+
+
 
   //for making list with checkbox
   function appendItemsToList(list,idItem,itemObj){
@@ -20,6 +33,7 @@ window.onload = function(){
     input.className = "filled-in";
     input.id = "list-item-"+idItem;
     input.type="checkbox";
+    //click event for input
     input.addEventListener('click',doneSelf);
     if(itemObj.done){
       label.style.textDecoration = "line-through";
@@ -33,8 +47,21 @@ window.onload = function(){
     label.textContent = itemObj.task;
     upBtn.className = "material-icons up";
     upBtn.textContent = "keyboard_arrow_up";
+    //click event for upBtn
+    upBtn.addEventListener('click',(event)=>{
+      var id = parseInt(event.target.previousSibling.htmlFor.split('-')[2]);
+      swap(todoItems,id,id-1);
+      localStorage.setItem('todoList',JSON.stringify(todoItems));
+      refreshTodo();
+    });
     downBtn.className = "material-icons down";
     downBtn.textContent = "keyboard_arrow_down";
+    downBtn.addEventListener('click',(event)=>{
+      var id = parseInt(event.target.previousSibling.previousSibling.htmlFor.split('-')[2]);
+      swap(todoItems,id,id+1);
+      localStorage.setItem('todoList',JSON.stringify(todoItems));
+      refreshTodo();
+    });
     li.appendChild(input);
     li.appendChild(label);
     li.appendChild(upBtn);
@@ -81,5 +108,11 @@ window.onload = function(){
     localStorage.setItem('todoList',JSON.stringify(todoItems));
     refreshTodo();
   }
+
+    function swap(arr,indexA,indexB){
+      var temp = arr[indexA];
+      arr[indexA] = arr[indexB];
+      arr[indexB] = temp;
+    }
 
 }
